@@ -1,117 +1,121 @@
 import React, {
   useState,
+  Fragment,
 } from 'react'
-import { Form, Input, Button } from 'antd'
-import WizardModal from './feature/WizardModal'
-import Question from './components/Question'
+import Wizard, {
+  Section
+} from './Wizard'
 
-function ErrorMessage({ text }) {
-  return <div className="error-message">{text}</div>
-}
+function App() {
+  const [isOpen, setIsOpen] = useState(true)
 
-export default function App() {
-  const [form, setForm] = useState({})
-  const [isOpenModal, setIsOpenModal] = useState(true)
-
-  function onOpenModal() {
-    setIsOpenModal(true)
-    console.log('modal is opened!')
+  const onOpen = () => {
+    setIsOpen(true)
   }
 
-  function onCloseModal() {
-    setIsOpenModal(false)
-    setForm({})
-    console.log('modal is closed!')
-  }
-
-  function onFinishForm() {
-    alert(`Finish! Thank you for information\n${JSON.stringify(form)}`)
-  }
-
-  function onValuesChange(name, values) {
-    setForm(prevState => ({
-      ...prevState,
-      [name]: {
-        ...prevState[name],
-        ...values,
-      }
-    }))
+  const onClose = () => {
+    setIsOpen(false)
   }
 
   return (
     <div className="App">
-      <Button
-        type="primary"
-        onClick={onOpenModal}
+      <Wizard
+        isOpen={isOpen}
+        onClose={onClose}
+        canOverlayClick
       >
-        open modal
-      </Button>
-      <WizardModal
-        isOpen={isOpenModal}
-        onRequestClose={onCloseModal}
-      >
-        <Question
-          page={1}
-          name="questionA"
-          initialValues={form.questionA}
-          onValuesChange={onValuesChange}
-        >
-          <h3 className="heading">Question A</h3>
-          <Form.Item
-            label="FirstName"
-            name="firstName"
-            rules={[
-              {
-                required: true,
-                message: <ErrorMessage text="Please input your firstname!" />,
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-        </Question>
-        <Question
-          page={2}
-          name="questionB"
-          initialValues={form.questionB}
-          onValuesChange={onValuesChange}
-        >
-          <h3 className="heading">Question B</h3>
-          <Form.Item
-            label="LastName"
-            name="lastName"
-            rules={[
-              {
-                required: true,
-                message: <ErrorMessage text="Please input your lastname!" />,
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-        </Question>
-        <Question
-          page={3}
-          name="questionC"
-          initialValues={form.questionC}
-          onValuesChange={onValuesChange}
-          onFinishForm={onFinishForm}
-        >
-          <h3 className="heading">Question C</h3>
-          <Form.Item
-            label="Age"
-            name="age"
-            rules={[
-              {
-                required: true,
-                message: <ErrorMessage text="Please input your age!" />,
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-        </Question>
-      </WizardModal>
+        <Section>
+          {({ onNext }) => (
+            <Fragment>
+              <h3 className="heading">Section 1</h3>
+              <article className="article">
+                It is a long established fact that a reader will be
+                readable content of a page when looking at its layout.
+                using Lorem Ipsum is that it has a more-or-less normal
+                of letters, as opposed to using 'Content here, content
+                it look like readable English. Many desktop publishing
+              </article>
+              <div className="button-group">
+                <button type="button" onClick={onNext}>Next {'>'}</button>
+              </div>
+            </Fragment>
+          )}
+        </Section>
+        <Section>
+          {({ onPrev, onNext }) => (
+            <Fragment>
+              <h3 className="heading">Section 2</h3>
+              <article className="article">
+                It is a long established fact that a reader will be
+                readable content of a page when looking at its layout.
+                using Lorem Ipsum is that it has a more-or-less normal
+                of letters, as opposed to using 'Content here, content
+                it look like readable English. Many desktop publishing
+              </article>
+              <div className="button-group">
+                <button type="button" onClick={onPrev}>{'<'} Previous</button>
+                <button type="button" onClick={onNext}>Next {'>'}</button>
+              </div>
+            </Fragment>
+          )}
+        </Section>
+        <Section>
+          {({ onPrev, onNext }) => (
+            <Fragment>
+              <h3 className="heading">Section 3</h3>
+              <article className="article">
+                It is a long established fact that a reader will be
+                readable content of a page when looking at its layout.
+                using Lorem Ipsum is that it has a more-or-less normal
+                of letters, as opposed to using 'Content here, content
+                it look like readable English. Many desktop publishing
+              </article>
+              <div className="button-group">
+                <button type="button" onClick={onPrev}>{'<'} Previous</button>
+                <button type="button" onClick={onNext}>Next {'>'}</button>
+              </div>
+            </Fragment>
+          )}
+        </Section>
+        <Section>
+          {({ onPrev, onNext }) => (
+            <Fragment>
+              <h3 className="heading">Section 4</h3>
+              <article className="article">
+                It is a long established fact that a reader will be
+                readable content of a page when looking at its layout.
+                using Lorem Ipsum is that it has a more-or-less normal
+                of letters, as opposed to using 'Content here, content
+                it look like readable English. Many desktop publishing
+              </article>
+              <div className="button-group">
+                <button type="button" onClick={onPrev}>{'<'} Previous</button>
+                <button type="button" onClick={onNext}>Next {'>'}</button>
+              </div>
+            </Fragment>
+          )}
+        </Section>
+        <Section>
+          {({ onPrev }) => (
+            <Fragment>
+              <h3 className="heading">Section 5</h3>
+              <article className="article">
+                It is a long established fact that a reader will be
+                readable content of a page when looking at its layout.
+                using Lorem Ipsum is that it has a more-or-less normal
+                of letters, as opposed to using 'Content here, content
+                it look like readable English. Many desktop publishing
+              </article>
+              <div className="button-group">
+                <button type="button" onClick={onPrev}>{'<'} Previous</button>
+              </div>
+            </Fragment>
+          )}
+        </Section>
+      </Wizard>
+      <button type="button" onClick={onOpen}>Trigger Modal</button>
     </div>
   )
 }
+
+export default App
