@@ -10,25 +10,27 @@
   bottom: 0;
 
   [class^='wizard-section-'] {
-    padding: 20px;
-    border-radius: 3px;
     background-color: #fff;
   }
 
   .wizard-content {
-    width: 920px;
+    width: 485px;
     position: relative;
     z-index: 10;
   }
 
-  .close-button {
+  .button-close {
     width: 20px;
     height: 20px;
     padding: 0;
+    font-size: 20px;
+    color: #cc583e;
+    text-align: center;
     line-height: 10px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
   }
 
   .overlay {
@@ -39,21 +41,5 @@
     left: 0;
     z-index: 1;
     background-color: rgba(#000000, 0.5);
-  }
-}
-
-.heading {
-  margin: 0;
-}
-
-.article {
-  padding: 20px 0;
-}
-
-.button-group {
-  text-align: right;
-
-  button + button {
-    margin-left: 10px;
   }
 }

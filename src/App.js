@@ -1,10 +1,13 @@
 import React, {
   useState,
-  Fragment,
 } from 'react'
 import Wizard, {
   Section
 } from './Wizard'
+import Layout, {
+  Button,
+} from './Template'
+import './App.scss'
 
 function App() {
   const [isOpen, setIsOpen] = useState(true)
@@ -17,6 +20,10 @@ function App() {
     setIsOpen(false)
   }
 
+  const onFinish = () => {
+    alert('Thank you for information!')
+  }
+
   return (
     <div className="App">
       <Wizard
@@ -26,90 +33,127 @@ function App() {
       >
         <Section>
           {({ onNext }) => (
-            <Fragment>
-              <h3 className="heading">Section 1</h3>
-              <article className="article">
-                It is a long established fact that a reader will be
-                readable content of a page when looking at its layout.
-                using Lorem Ipsum is that it has a more-or-less normal
-                of letters, as opposed to using 'Content here, content
-                it look like readable English. Many desktop publishing
-              </article>
-              <div className="button-group">
-                <button type="button" onClick={onNext}>Next {'>'}</button>
-              </div>
-            </Fragment>
+            <Layout
+              content={
+                <article className="article">
+                  <h3 className="heading">Section 1</h3>
+                  <div>
+                    It is a long established fact that a reader will be
+                    readable content of a page when looking at its layout.
+                    using Lorem Ipsum is that it has a more-or-less normal
+                    of letters, as opposed to using 'Content here, content
+                    it look like readable English. Many desktop publishing
+                  </div>
+                </article>
+              }
+              footer={
+                <div className="button-group">
+                  <Button type="primary" onClick={onNext}>NEXT</Button>
+                  <Button type="secondary">WELCOME TO SITE</Button>
+                </div>
+              }
+            />
           )}
         </Section>
         <Section>
           {({ onPrev, onNext }) => (
-            <Fragment>
-              <h3 className="heading">Section 2</h3>
-              <article className="article">
-                It is a long established fact that a reader will be
-                readable content of a page when looking at its layout.
-                using Lorem Ipsum is that it has a more-or-less normal
-                of letters, as opposed to using 'Content here, content
-                it look like readable English. Many desktop publishing
-              </article>
-              <div className="button-group">
-                <button type="button" onClick={onPrev}>{'<'} Previous</button>
-                <button type="button" onClick={onNext}>Next {'>'}</button>
-              </div>
-            </Fragment>
+            <Layout
+              content={
+                <article className="article">
+                  <h3 className="heading">Section 2</h3>
+                  <div>
+                    It is a long established fact that a reader will be
+                    readable content of a page when looking at its layout.
+                    using Lorem Ipsum is that it has a more-or-less normal
+                    of letters, as opposed to using 'Content here, content
+                    it look like readable English. Many desktop publishing
+                  </div>
+                </article>
+              }
+              footer={
+                <div className="button-group">
+                  <Button type="primary" onClick={onNext}>NEXT</Button>
+                  <Button type="secondary" onClick={onPrev}>BACK</Button>
+                </div>
+              }
+            />
           )}
         </Section>
         <Section>
           {({ onPrev, onNext }) => (
-            <Fragment>
-              <h3 className="heading">Section 3</h3>
-              <article className="article">
-                It is a long established fact that a reader will be
-                readable content of a page when looking at its layout.
-                using Lorem Ipsum is that it has a more-or-less normal
-                of letters, as opposed to using 'Content here, content
-                it look like readable English. Many desktop publishing
-              </article>
-              <div className="button-group">
-                <button type="button" onClick={onPrev}>{'<'} Previous</button>
-                <button type="button" onClick={onNext}>Next {'>'}</button>
-              </div>
-            </Fragment>
+            <Layout
+              showBackButton
+              onBack={onPrev}
+              content={
+                <article className="article">
+                  <h3 className="heading">Section 3</h3>
+                  <div>
+                    It is a long established fact that a reader will be
+                    readable content of a page when looking at its layout.
+                    using Lorem Ipsum is that it has a more-or-less normal
+                    of letters, as opposed to using 'Content here, content
+                    it look like readable English. Many desktop publishing
+                  </div>
+                </article>
+              }
+              footer={
+                <div className="button-group">
+                  <Button disabled>CONTINUE</Button>
+                  <Button type="link" onClick={onNext}>skip</Button>
+                </div>
+              }
+            />
           )}
         </Section>
         <Section>
           {({ onPrev, onNext }) => (
-            <Fragment>
-              <h3 className="heading">Section 4</h3>
-              <article className="article">
-                It is a long established fact that a reader will be
-                readable content of a page when looking at its layout.
-                using Lorem Ipsum is that it has a more-or-less normal
-                of letters, as opposed to using 'Content here, content
-                it look like readable English. Many desktop publishing
-              </article>
-              <div className="button-group">
-                <button type="button" onClick={onPrev}>{'<'} Previous</button>
-                <button type="button" onClick={onNext}>Next {'>'}</button>
-              </div>
-            </Fragment>
+            <Layout
+              showBackButton
+              onBack={onPrev}
+              content={
+                <article className="article">
+                  <h3 className="heading">Section 4</h3>
+                  <div>
+                    It is a long established fact that a reader will be
+                    readable content of a page when looking at its layout.
+                    using Lorem Ipsum is that it has a more-or-less normal
+                    of letters, as opposed to using 'Content here, content
+                    it look like readable English. Many desktop publishing
+                  </div>
+                </article>
+              }
+              footer={
+                <div className="button-group">
+                  <Button disabled>CONTINUE</Button>
+                  <Button type="link" onClick={onNext}>skip</Button>
+                </div>
+              }
+            />
           )}
         </Section>
         <Section>
           {({ onPrev }) => (
-            <Fragment>
-              <h3 className="heading">Section 5</h3>
-              <article className="article">
-                It is a long established fact that a reader will be
-                readable content of a page when looking at its layout.
-                using Lorem Ipsum is that it has a more-or-less normal
-                of letters, as opposed to using 'Content here, content
-                it look like readable English. Many desktop publishing
-              </article>
-              <div className="button-group">
-                <button type="button" onClick={onPrev}>{'<'} Previous</button>
-              </div>
-            </Fragment>
+            <Layout
+              showBackButton
+              onBack={onPrev}
+              content={
+                <article className="article">
+                  <h3 className="heading">Section 5</h3>
+                  <div>
+                    It is a long established fact that a reader will be
+                    readable content of a page when looking at its layout.
+                    using Lorem Ipsum is that it has a more-or-less normal
+                    of letters, as opposed to using 'Content here, content
+                    it look like readable English. Many desktop publishing
+                  </div>
+                </article>
+              }
+              footer={
+                <div className="button-group">
+                  <Button type="primary" onClick={onFinish}>CONTINUE SHOPPING</Button>
+                </div>
+              }
+            />
           )}
         </Section>
       </Wizard>

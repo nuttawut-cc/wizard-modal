@@ -1,0 +1,58 @@
+.temp-button {
+  width: 280px;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  &[disabled] {
+    color: #fff !important;
+    background-color: #e6e7ea !important;
+    cursor: default;
+  }
+
+  &-primary {
+    color: #fff;
+    background-color: #cc583e;
+  }
+
+  &-secondary {
+    color: #cc583e;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #cc583e;
+  }
+
+  &-link {
+    color: #858a93;
+  }
+}
+
+.temp-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  height: 590px;
+
+  .temp-button-back {
+    font-weight: 600;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    cursor: pointer;
+  }
+
+  .temp-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .temp-footer {
+    flex: none;
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    flex-direction: inherit;
+    height: 170px;
+  }
+}

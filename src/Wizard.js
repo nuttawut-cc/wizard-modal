@@ -30,6 +30,7 @@ const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout))
 
 Wizard.defaultProps = {
   duration: 200,
+  allowProgress: false,
   canOverlayClick: false,
   onClose: () => { },
 }
@@ -148,13 +149,12 @@ function SectionAnimated(props) {
       }}
     >
       {children}
-      <button
-        type="button"
-        className="close-button"
+      <div
+        className="button-close"
         onClick={onClose}
       >
         x
-      </button>
+      </div>
     </animated.section>
   )
 }
