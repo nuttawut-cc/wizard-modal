@@ -32,18 +32,18 @@ ProgressBar.defaultProps = {
   min: 0,
   max: 0,
   delay: 300,
-  duration: 300,
+  duration: 600,
   start: false,
   reverse: false,
 }
 
 export function ProgressBar(props) {
   const {
-    start,
     min,
     max,
-    duration,
     delay,
+    duration,
+    start,
     reverse,
   } = props
   const { width } = useSpring({
@@ -54,12 +54,12 @@ export function ProgressBar(props) {
     width: start ? max : min,
     from: { width: min }
   })
-  
+
   return (
     <div className="temp-progress-bar">
       <animated.div
         style={{ width: width.interpolate(w => `${w}%`) }}
-        className="temp-progress-value" 
+        className="temp-progress-value"
       />
     </div>
   )

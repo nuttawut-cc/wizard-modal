@@ -38,8 +38,8 @@ function App() {
             <Template
               content={
                 <article className="article">
-                  <h3 className="heading">Section 0</h3>
-                  <div className="article">
+                  <h3 className="heading">Section 1</h3>
+                  <div>
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
@@ -60,21 +60,24 @@ function App() {
         <Section>
           {({ onPrev, onNext, current, event }) => (
             <Template
+              showBackButton
+              onBack={onPrev}
               content={
                 <article className="article">
-                  <h3 className="heading">Section 1</h3>
-                  <ProgressBar 
-                    min={10} 
+                  <ProgressBar
+                    min={10}
                     max={30}
-                    start={current} 
-                    reverse={event === eventTypes.PREV} 
+                    start={current}
+                    reverse={event === eventTypes.PREV}
                   />
-                  <div className="article">
-                    It is a long established fact that a reader will be
-                    readable content of a page when looking at its layout.
-                    using Lorem Ipsum is that it has a more-or-less normal
-                    of letters, as opposed to using 'Content here, content
-                    it look like readable English. Many desktop publishing
+                  <h3 className="heading">Section 2</h3>
+                  <div className="categories">
+                    <div className="category">A</div>
+                    <div className="category">B</div>
+                    <div className="category">C</div>
+                    <div className="category">D</div>
+                    <div className="category">E</div>
+                    <div className="category">F</div>
                   </div>
                 </article>
               }
@@ -94,19 +97,19 @@ function App() {
               onBack={onPrev}
               content={
                 <article className="article">
-                  <h3 className="heading">Section 2</h3>
-                  <ProgressBar 
+                  <ProgressBar
                     min={30}
                     max={55}
                     start={current}
-                    reverse={event === eventTypes.PREV} 
+                    reverse={event === eventTypes.PREV}
                   />
-                  <div className="article">
-                    It is a long established fact that a reader will be
+                  <h3 className="heading">Section 3</h3>
+                  <div>
+                    a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
                     of letters, as opposed to using 'Content here, content
-                    it look like readable English. Many desktop publishing
+                    it look like readable English
                   </div>
                 </article>
               }
@@ -126,19 +129,20 @@ function App() {
               onBack={onPrev}
               content={
                 <article className="article">
-                  <h3 className="heading">Section 3</h3>
-                  <ProgressBar 
-                    min={55} 
+                  <ProgressBar
+                    min={55}
                     max={80}
-                    start={current} 
-                    reverse={event === eventTypes.PREV} 
+                    start={current}
+                    reverse={event === eventTypes.PREV}
                   />
-                  <div className="article">
-                    It is a long established fact that a reader will be
-                    readable content of a page when looking at its layout.
-                    using Lorem Ipsum is that it has a more-or-less normal
-                    of letters, as opposed to using 'Content here, content
-                    it look like readable English. Many desktop publishing
+                  <h3 className="heading">Section 4</h3>
+                  <div className="categories">
+                    <div className="category">A</div>
+                    <div className="category">B</div>
+                    <div className="category">C</div>
+                    <div className="category">D</div>
+                    <div className="category">E</div>
+                    <div className="category">F</div>
                   </div>
                 </article>
               }
@@ -158,19 +162,19 @@ function App() {
               onBack={onPrev}
               content={
                 <article className="article">
-                  <h3 className="heading">Section 4</h3>
-                  <ProgressBar 
-                    min={80} 
+                  <ProgressBar
+                    min={80}
                     max={100}
                     start={current}
-                    reverse={event === eventTypes.PREV} 
+                    reverse={event === eventTypes.PREV}
                   />
-                  <div className="article">
-                    It is a long established fact that a reader will be
+                  <h3 className="heading">Section 5</h3>
+                  <div>
+                    a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
                     of letters, as opposed to using 'Content here, content
-                    it look like readable English. Many desktop publishing
+                    it look like readable English
                   </div>
                 </article>
               }
@@ -184,7 +188,7 @@ function App() {
         </Section>
       </Wizard>
       <button type="button" onClick={onOpen}>Trigger Modal</button>
-    </div>
+    </div >
   )
 }
 

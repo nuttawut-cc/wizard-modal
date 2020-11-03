@@ -30,11 +30,10 @@
 
 .temp-progress-bar {
   width: 100%;
-  height: 10px;
-  margin: 10px 0;
+  height: 6px;
   overflow: hidden;
-  border-radius: 10px;
-  background-color: #aaadb1;
+  border-radius: 6px;
+  background-color: #e6e7ea;
 
   .temp-progress-value {
     width: 100px;
@@ -49,22 +48,28 @@
   display: flex;
   flex-direction: column;
   padding-top: 60px;
-  height: 590px;
+  height: 580px;
 
   .temp-button-back {
-    font-size: 13px;
     font-weight: 600;
     position: absolute;
-    top: 17px;
+    top: 18px;
     left: 20px;
+    padding-left: 14px;
     cursor: pointer;
 
     &:before {
-      content: '<';
+      content: '';
       color: #cc583e;
-      margin-right: 2px;
-      position: relative;
-      top: -1px;
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      display: block;
+      transform: rotate(45deg);
+      border-left: 2px solid #cc583e;
+      border-bottom: 2px solid #cc583e;
     }
   }
 

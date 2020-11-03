@@ -5,15 +5,33 @@
 }
 
 .temp-progress-bar {
-  max-width: 300px;
+  max-width: 195px;
   margin: 0 auto;
 }
 
 .article {
-  padding: 30px 20px;
+  padding: 0 20px;
   text-align: center;
 }
 
 .heading {
-  margin: 0 0 30px;
+  margin: 20px 0 40px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 90%;
+
+  .category {
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #cdcdd0;
+    line-height: 90px;
+    font-size: 20px;
+  }
 }

@@ -117,12 +117,12 @@ export default function Wizard(props) {
                     )}
                   >
                     {children({
-                      onPrev, 
-                      onNext, 
+                      onPrev,
+                      onNext,
                       onClose,
                       event,
-                      currentIndex, 
-                      current: isCurrent(index) 
+                      currentIndex,
+                      current: isCurrent(index)
                     })}
                   </SectionAnimated>
                 ))}
@@ -170,9 +170,7 @@ function SectionAnimated(props) {
       <div
         className="button-close"
         onClick={onClose}
-      >
-        x
-      </div>
+      />
     </animated.section>
   )
 }
