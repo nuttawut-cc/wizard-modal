@@ -5,7 +5,7 @@ import Wizard, {
   Section,
   eventTypes,
 } from './Wizard'
-import Layout, {
+import Template, {
   Button,
   ProgressBar,
 } from './Template'
@@ -35,7 +35,7 @@ function App() {
       >
         <Section>
           {({ onNext }) => (
-            <Layout
+            <Template
               content={
                 <article className="article">
                   <h3 className="heading">Section 0</h3>
@@ -59,7 +59,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev, onNext, current, event }) => (
-            <Layout
+            <Template
               content={
                 <article className="article">
                   <h3 className="heading">Section 1</h3>
@@ -89,7 +89,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev, onNext, current, event }) => (
-            <Layout
+            <Template
               showBackButton
               onBack={onPrev}
               content={
@@ -121,7 +121,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev, onNext, current, event }) => (
-            <Layout
+            <Template
               showBackButton
               onBack={onPrev}
               content={
@@ -153,7 +153,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev, current, event }) => (
-            <Layout
+            <Template
               showBackButton
               onBack={onPrev}
               content={

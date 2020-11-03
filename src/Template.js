@@ -65,7 +65,7 @@ export function ProgressBar(props) {
   )
 }
 
-export default function Layout(props) {
+export default function Template(props) {
   const {
     content,
     className,
