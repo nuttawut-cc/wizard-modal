@@ -21,17 +21,33 @@
 .categories {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0 auto;
   width: 90%;
 
   .category {
-    width: 90px;
-    height: 90px;
+    width: 22%;
     margin: 10px;
+    font-size: 20px;
     border-radius: 8px;
     border: 1px solid #cdcdd0;
-    line-height: 90px;
-    font-size: 20px;
+    position: relative;
+
+    &:before {
+      content: '';
+      padding-top: 100%;
+      display: block;
+    }
+
+    &:after {
+      content: attr(title);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin-top: -10px;
+      line-height: 20px;
+      height: 20px;
+    }
   }
 }

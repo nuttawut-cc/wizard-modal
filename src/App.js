@@ -72,12 +72,12 @@ function App() {
                   />
                   <h3 className="heading">Section 2</h3>
                   <div className="categories">
-                    <div className="category">A</div>
-                    <div className="category">B</div>
-                    <div className="category">C</div>
-                    <div className="category">D</div>
-                    <div className="category">E</div>
-                    <div className="category">F</div>
+                    <div className="category" title="A" />
+                    <div className="category" title="B" />
+                    <div className="category" title="C" />
+                    <div className="category" title="D" />
+                    <div className="category" title="E" />
+                    <div className="category" title="D" />
                   </div>
                 </article>
               }
@@ -137,12 +137,12 @@ function App() {
                   />
                   <h3 className="heading">Section 4</h3>
                   <div className="categories">
-                    <div className="category">A</div>
-                    <div className="category">B</div>
-                    <div className="category">C</div>
-                    <div className="category">D</div>
-                    <div className="category">E</div>
-                    <div className="category">F</div>
+                    <div className="category" title="A" />
+                    <div className="category" title="B" />
+                    <div className="category" title="C" />
+                    <div className="category" title="D" />
+                    <div className="category" title="E" />
+                    <div className="category" title="D" />
                   </div>
                 </article>
               }
