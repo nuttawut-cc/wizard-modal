@@ -49,7 +49,7 @@ export default function Wizard(props) {
     onClose,
   } = props
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [event, setEvent] = useState()
+  const [event, setEvent] = useState('')
   const sections = getSections(children)
   const transitions = useTransition(isOpen, null, {
     from: { opacity: 0 },
@@ -57,8 +57,9 @@ export default function Wizard(props) {
     leave: () => async (next) => {
       await sleep(duration)
       await next({ opacity: 0 })
+      await sleep(100)
       setCurrentIndex(0)
-      setEvent()
+      setEvent('')
     }
   })
 
