@@ -4,7 +4,7 @@ import React, {
 import Wizard, {
   Section
 } from './Wizard'
-import CardLayout, {
+import Layout, {
   Button,
 } from './Template'
 import './App.scss'
@@ -33,7 +33,7 @@ function App() {
       >
         <Section>
           {({ onNext }) => (
-            <CardLayout
+            <Layout
               content={
                 <article className="article">
                   <h3 className="heading">Section 1</h3>
@@ -57,7 +57,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev, onNext }) => (
-            <CardLayout
+            <Layout
               content={
                 <article className="article">
                   <h3 className="heading">Section 2</h3>
@@ -107,7 +107,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev, onNext }) => (
-            <CardLayout
+            <Layout
               showBackButton
               onBack={onPrev}
               content={
@@ -133,7 +133,7 @@ function App() {
         </Section>
         <Section>
           {({ onPrev }) => (
-            <CardLayout
+            <Layout
               showBackButton
               onBack={onPrev}
               content={

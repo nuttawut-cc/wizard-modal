@@ -24,7 +24,7 @@ export function Button(props) {
   )
 }
 
-export default function CardLayout(props) {
+export default function Layout(props) {
   const {
     content,
     className,

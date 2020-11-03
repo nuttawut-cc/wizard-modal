@@ -47,9 +47,7 @@ export default function Wizard(props) {
   const sections = getSections(children)
   const transitions = useTransition(isOpen, null, {
     from: { opacity: 0 },
-    enter: () => async (next) => {
-      await next({ opacity: 1 })
-    },
+    enter: { opacity: 1 },
     leave: () => async (next) => {
       await sleep(duration)
       await next({ opacity: 0 })
