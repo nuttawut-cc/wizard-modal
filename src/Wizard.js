@@ -28,7 +28,7 @@ const getSections = (children) => {
 
 const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout))
 
-const eventTypes = {
+export const eventTypes = {
   PREV: 'prev',
   NEXT: 'next'
 }
