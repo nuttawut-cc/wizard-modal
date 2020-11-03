@@ -14,7 +14,7 @@ import './Wizard.scss'
 
 const SECTION_NAME = 'wizard-section'
 
-Section.display = 'wizard-section'
+Section.display = SECTION_NAME
 export function Section() { }
 
 const isValidSection = (element) => {
