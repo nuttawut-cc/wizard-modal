@@ -63,7 +63,12 @@ function App() {
               content={
                 <article className="article">
                   <h3 className="heading">Section 1</h3>
-                  <ProgressBar start={current} min={10} max={30} reverse={event === eventTypes.PREV} />
+                  <ProgressBar 
+                    min={10} 
+                    max={30}
+                    start={current} 
+                    reverse={event === eventTypes.PREV} 
+                  />
                   <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
@@ -90,7 +95,12 @@ function App() {
               content={
                 <article className="article">
                   <h3 className="heading">Section 2</h3>
-                  <ProgressBar start={current} min={30} max={55} reverse={event === eventTypes.PREV} />
+                  <ProgressBar 
+                    min={30}
+                    max={55}
+                    start={current}
+                    reverse={event === eventTypes.PREV} 
+                  />
                   <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
@@ -117,7 +127,12 @@ function App() {
               content={
                 <article className="article">
                   <h3 className="heading">Section 3</h3>
-                  <ProgressBar start={current} min={55} max={80} reverse={event === eventTypes.PREV} />
+                  <ProgressBar 
+                    min={55} 
+                    max={80}
+                    start={current} 
+                    reverse={event === eventTypes.PREV} 
+                  />
                   <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
@@ -144,7 +159,12 @@ function App() {
               content={
                 <article className="article">
                   <h3 className="heading">Section 4</h3>
-                  <ProgressBar start={current} min={80} max={100} reverse={event === eventTypes.PREV} />
+                  <ProgressBar 
+                    min={80} 
+                    max={100}
+                    start={current}
+                    reverse={event === eventTypes.PREV} 
+                  />
                   <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
