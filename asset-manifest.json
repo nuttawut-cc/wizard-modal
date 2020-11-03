@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/wizard-modal/static/css/main.5640ed75.chunk.css",
-    "main.js": "/wizard-modal/static/js/main.24f97b99.chunk.js",
-    "main.js.map": "/wizard-modal/static/js/main.24f97b99.chunk.js.map",
+    "main.css": "/wizard-modal/static/css/main.f88e89b9.chunk.css",
+    "main.js": "/wizard-modal/static/js/main.a3128dd4.chunk.js",
+    "main.js.map": "/wizard-modal/static/js/main.a3128dd4.chunk.js.map",
     "runtime-main.js": "/wizard-modal/static/js/runtime-main.35b01b97.js",
     "runtime-main.js.map": "/wizard-modal/static/js/runtime-main.35b01b97.js.map",
     "static/js/2.95781cba.chunk.js": "/wizard-modal/static/js/2.95781cba.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.10250123.chunk.js": "/wizard-modal/static/js/3.10250123.chunk.js",
     "static/js/3.10250123.chunk.js.map": "/wizard-modal/static/js/3.10250123.chunk.js.map",
     "index.html": "/wizard-modal/index.html",
-    "static/css/main.5640ed75.chunk.css.map": "/wizard-modal/static/css/main.5640ed75.chunk.css.map",
+    "static/css/main.f88e89b9.chunk.css.map": "/wizard-modal/static/css/main.f88e89b9.chunk.css.map",
     "static/js/2.95781cba.chunk.js.LICENSE.txt": "/wizard-modal/static/js/2.95781cba.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.35b01b97.js",
     "static/js/2.95781cba.chunk.js",
-    "static/css/main.5640ed75.chunk.css",
-    "static/js/main.24f97b99.chunk.js"
+    "static/css/main.f88e89b9.chunk.css",
+    "static/js/main.a3128dd4.chunk.js"
   ]
 }
