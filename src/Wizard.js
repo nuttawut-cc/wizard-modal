@@ -152,9 +152,7 @@ function SectionAnimated(props) {
     config: { duration: duration },
     delay: !isOpen ? 0 : current ? duration : 0,
     opacity: !isOpen && current ? 0 : current ? 1 : 0,
-    from: {
-      opacity: !isOpen && current ? 1 : 0,
-    }
+    from: { opacity: !isOpen && current ? 1 : 0 }
   })
 
   return (
