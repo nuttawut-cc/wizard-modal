@@ -28,6 +28,11 @@ const getSections = (children) => {
 
 const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout))
 
+const eventTypes = {
+  PREV: 'prev',
+  NEXT: 'next'
+}
+
 Wizard.defaultProps = {
   duration: 200,
   allowProgress: false,
@@ -44,6 +49,7 @@ export default function Wizard(props) {
     onClose,
   } = props
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [event, setEvent] = useState()
   const sections = getSections(children)
   const transitions = useTransition(isOpen, null, {
     from: { opacity: 0 },
@@ -51,10 +57,13 @@ export default function Wizard(props) {
     leave: () => async (next) => {
       await sleep(duration)
       await next({ opacity: 0 })
+      setCurrentIndex(0)
+      setEvent()
     }
   })
 
   const onNext = () => {
+    setEvent(eventTypes.NEXT)
     setCurrentIndex(prev => {
       const next = prev + 1
       const last = sections.length - 1
@@ -63,10 +72,15 @@ export default function Wizard(props) {
   }
 
   const onPrev = () => {
+    setEvent(eventTypes.PREV)
     setCurrentIndex(prev => {
       const next = prev - 1
       return next < 0 ? 0 : next
     })
+  }
+
+  const isCurrent = (index) => {
+    return index === currentIndex
   }
 
   return createPortal(
@@ -92,16 +106,23 @@ export default function Wizard(props) {
                     {...rest}
                     key={index}
                     isOpen={isOpen}
-                    current={index === currentIndex}
+                    current={isCurrent(index)}
                     duration={duration}
                     onClose={onClose}
                     className={cns(
                       `wizard-section-${index}`,
                       className,
-                      { current: index === currentIndex }
+                      { current: isCurrent(index) }
                     )}
                   >
-                    {children({ onPrev, onNext, onClose, currentIndex })}
+                    {children({
+                      onPrev, 
+                      onNext, 
+                      onClose,
+                      event,
+                      currentIndex, 
+                      current: isCurrent(index) 
+                    })}
                   </SectionAnimated>
                 ))}
             </div>

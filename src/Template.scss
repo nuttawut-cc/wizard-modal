@@ -28,6 +28,23 @@
   }
 }
 
+.temp-progress-bar {
+  width: 100%;
+  height: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #aaadb1;
+
+  .temp-progress-value {
+    width: 100px;
+    height: 100%;
+    max-width: 100%;
+    border-radius: inherit;
+    background-color: #cc583e;
+  }
+}
+
 .temp-wrapper {
   display: flex;
   flex-direction: column;
@@ -35,11 +52,20 @@
   height: 590px;
 
   .temp-button-back {
+    font-size: 13px;
     font-weight: 600;
     position: absolute;
-    top: 16px;
+    top: 17px;
     left: 20px;
     cursor: pointer;
+
+    &:before {
+      content: '<';
+      color: #cc583e;
+      margin-right: 2px;
+      position: relative;
+      top: -1px;
+    }
   }
 
   .temp-content {

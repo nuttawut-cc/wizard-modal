@@ -6,6 +6,7 @@ import Wizard, {
 } from './Wizard'
 import Layout, {
   Button,
+  ProgressBar,
 } from './Template'
 import './App.scss'
 
@@ -37,7 +38,7 @@ function App() {
               content={
                 <article className="article">
                   <h3 className="heading">Section 1</h3>
-                  <div>
+                  <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
@@ -56,12 +57,13 @@ function App() {
           )}
         </Section>
         <Section>
-          {({ onPrev, onNext }) => (
+          {({ onPrev, onNext, current, event }) => (
             <Layout
               content={
                 <article className="article">
                   <h3 className="heading">Section 2</h3>
-                  <div>
+                  <ProgressBar start={current} min={10} max={30} reverse={event === 'prev'} />
+                  <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
@@ -80,14 +82,15 @@ function App() {
           )}
         </Section>
         <Section>
-          {({ onPrev, onNext }) => (
-            <CardLayout
+          {({ onPrev, onNext, current, event }) => (
+            <Layout
               showBackButton
               onBack={onPrev}
               content={
                 <article className="article">
                   <h3 className="heading">Section 3</h3>
-                  <div>
+                  <ProgressBar start={current} min={30} max={55} reverse={event === 'prev'} />
+                  <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
@@ -106,14 +109,15 @@ function App() {
           )}
         </Section>
         <Section>
-          {({ onPrev, onNext }) => (
+          {({ onPrev, onNext, current, event }) => (
             <Layout
               showBackButton
               onBack={onPrev}
               content={
                 <article className="article">
                   <h3 className="heading">Section 4</h3>
-                  <div>
+                  <ProgressBar start={current} min={55} max={80} reverse={event === 'prev'} />
+                  <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
@@ -132,14 +136,15 @@ function App() {
           )}
         </Section>
         <Section>
-          {({ onPrev }) => (
+          {({ onPrev, current, event }) => (
             <Layout
               showBackButton
               onBack={onPrev}
               content={
                 <article className="article">
                   <h3 className="heading">Section 5</h3>
-                  <div>
+                  <ProgressBar start={current} min={80} max={100} reverse={event === 'prev'} />
+                  <div className="article">
                     It is a long established fact that a reader will be
                     readable content of a page when looking at its layout.
                     using Lorem Ipsum is that it has a more-or-less normal
